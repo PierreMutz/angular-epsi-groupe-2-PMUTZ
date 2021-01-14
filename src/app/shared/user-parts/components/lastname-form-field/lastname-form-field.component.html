@@ -1,0 +1,9 @@
+<form [formGroup]="parentFormGroup">
+  <mat-form-field appearance="legacy">
+    <mat-label>Nom</mat-label>
+    <input matInput placeholder="Nom" type="text" formControlName="last_name">
+    <mat-error *ngIf="lastNameControl.hasError('required')">
+      Le nom est obligatoire
+    </mat-error>
+  </mat-form-field>
+</form>

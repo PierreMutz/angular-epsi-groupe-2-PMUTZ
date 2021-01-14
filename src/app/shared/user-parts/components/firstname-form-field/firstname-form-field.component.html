@@ -1,0 +1,9 @@
+<form [formGroup]="parentFormGroup">
+  <mat-form-field appearance="legacy">
+    <mat-label>Prénom</mat-label>
+    <input matInput placeholder="Prénom" type="text" formControlName="first_name">
+    <mat-error *ngIf="firstNameControl.hasError('required')">
+      Le prénom est obligatoire
+    </mat-error>
+  </mat-form-field>
+</form>

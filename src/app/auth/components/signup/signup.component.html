@@ -1,0 +1,9 @@
+<h1> Page d'inscription </h1>
+
+<form [formGroup]="userForm" (ngSubmit)="signup()">
+  <app-email-form-field [parentFormGroup]="userForm"></app-email-form-field>
+  <app-password-form-field [parentFormGroup]="userForm"></app-password-form-field>
+  <app-firstname-form-field [parentFormGroup]="userForm"></app-firstname-form-field>
+  <app-lastname-form-field [parentFormGroup]="userForm"></app-lastname-form-field>
+  <button mat-raised-button color="accent" type="submit">Inscription</button>
+</form>
