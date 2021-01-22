@@ -46,6 +46,9 @@ export class CanActivateGuard implements CanActivate {
         if ("status" in response) {
           if (401 === response.status || 403 === response.status) {
             this.router.navigate(["auth/signin"]);
+            this.snackBar.open("Vous n'êtes pas connecté", "OK", {
+              duration: 3000
+            });
             return false;
           }
           // on vérifie que l'utilisateur est admin dans le cas où la router est dédiés à des admins
