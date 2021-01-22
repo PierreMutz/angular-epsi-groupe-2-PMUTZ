@@ -62,6 +62,8 @@ export class ProfileComponent implements OnInit {
   }
 
   openSnackBar(message: string) {
-    this._snackBar.open("Votre profil a bien été modifié");
+    this._snackBar.open("Votre profil a bien été modifié", "OK", {
+      duration: 3000
+    });
   }
 }

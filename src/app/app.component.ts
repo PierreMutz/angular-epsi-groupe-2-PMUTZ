@@ -10,9 +10,11 @@ import { MatSnackBar } from "@angular/material";
   styleUrls: ["./app.component.scss"]
 })
 export class AppComponent {
-  private _snackBar: MatSnackBar;
-
-  constructor(private sessionService: SessionService, private router: Router) {}
+  constructor(
+    private sessionService: SessionService,
+    private router: Router,
+    private _snackBar: MatSnackBar
+  ) {}
 
   get isSignedIn(): boolean {
     return AuthService.isSignedIn;
@@ -23,10 +25,9 @@ export class AppComponent {
     this.router.navigate(["/auth/signin"]).then(() => {
       this.sessionService.clear();
       AuthService.user = null;
-      this._snackBar.open("Vous êtes bien déconnecté");
+    });
+    this._snackBar.open("Vous êtes bien déconnecté", "OK", {
+      duration: 3000
     });
   }
-  /*openSnackBar(message: string) {
-    this._snackBar.open("Vous êtes bien déconnecté");
-  }*/
 }
