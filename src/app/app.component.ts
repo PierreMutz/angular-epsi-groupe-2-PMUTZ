@@ -19,10 +19,14 @@ export class AppComponent {
   get isSignedIn(): boolean {
     return AuthService.isSignedIn;
   }
+  
+  get isAdmin(): boolean {
+    return AuthService.isAdmin;
+  }
 
   signout() {
     // supprimer les données de sessions et retourner à la page de login
-    this.router.navigate(["/auth/signin"]).then(() => {
+    this.router.navigate(["/auth/landing"]).then(() => {
       this.sessionService.clear();
       AuthService.user = null;
     });
